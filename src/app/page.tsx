@@ -4,7 +4,12 @@ import type React from "react";
 import { PortfolioAnimations } from "@/components/portfolio-animations";
 import { experience, metrics, profile, projects, skills, strengths } from "@/data/portfolio";
 
-const nav = ["Projetos", "Experiencia", "Stack", "Contato"];
+const nav = [
+  { href: "#projetos", label: "Projetos" },
+  { href: "#experiencia", label: "Experiência" },
+  { href: "#stack", label: "Stack" },
+  { href: "#contato", label: "Contato" },
+];
 
 export default function Home() {
   return (
@@ -16,12 +21,12 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05080a]/78 backdrop-blur-xl">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8">
           <a href="#top" className="font-mono text-sm tracking-[0.24em] text-cyan-100">
-            CAUA.YVES
+            CAUÃ.YVES
           </a>
           <div className="hidden items-center gap-7 text-sm text-slate-300 md:flex">
             {nav.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-white">
-                {item}
+              <a key={item.href} href={item.href} className="transition hover:text-white">
+                {item.label}
               </a>
             ))}
           </div>
@@ -42,10 +47,10 @@ export default function Home() {
         <div className="relative z-10">
           <div className="reveal mb-6 inline-flex items-center gap-2 rounded-md border border-cyan-300/25 bg-cyan-300/8 px-3 py-2 text-sm text-cyan-100">
             <Sparkles size={16} />
-            Full stack com foco em produto, escala e experiencia.
+            Full stack com foco em produto, escala e experiência.
           </div>
           <h1 className="reveal max-w-4xl text-balance text-5xl font-semibold leading-[0.96] tracking-normal text-white sm:text-6xl lg:text-7xl">
-            Sistemas web elegantes para operacoes que precisam funcionar.
+            Sistemas web elegantes para operações que precisam funcionar.
           </h1>
           <p className="reveal mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             {profile.summary}
@@ -83,7 +88,7 @@ export default function Home() {
         <div className="reveal relative min-h-[430px] overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-cyan-950/30">
           <Image
             src="/images/hero-system.png"
-            alt="Interface tecnologica abstrata com paineis de dados"
+            alt="Interface tecnológica abstrata com painéis de dados"
             fill
             priority
             sizes="(min-width: 768px) 48vw, 100vw"
@@ -91,7 +96,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#05080a] via-transparent to-transparent" />
           <div className="absolute bottom-5 left-5 right-5 glass rounded-lg p-4">
-            <p className="text-sm font-medium text-cyan-100">Atuacao atual</p>
+            <p className="text-sm font-medium text-cyan-100">Atuação atual</p>
             <p className="mt-1 text-sm leading-6 text-slate-300">
               Desenvolvedor Front-end na MultiClubes, entregando produtos usados por clubes e
               parques em todo o Brasil.
@@ -117,7 +122,7 @@ export default function Home() {
       <Section
         id="projetos"
         eyebrow="Projetos selecionados"
-        title="Produtos reais, impacto mensuravel."
+        title="Produtos reais, impacto mensurável."
       >
         <div className="grid gap-4 md:grid-cols-2">
           {projects.map((project) => (
@@ -150,8 +155,8 @@ export default function Home() {
 
       <Section
         id="experiencia"
-        eyebrow="Experiencia"
-        title="Uma trajetoria de construcao ponta a ponta."
+        eyebrow="Experiência"
+        title="Uma trajetória de construção ponta a ponta."
       >
         <div className="space-y-4">
           {experience.map((item) => (
@@ -177,7 +182,7 @@ export default function Home() {
       <Section
         id="stack"
         eyebrow="Stack"
-        title="Tecnologia escolhida para entregar, nao para decorar."
+        title="Tecnologia escolhida para entregar, não para decorar."
       >
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {skills.map((group) => {
@@ -210,7 +215,7 @@ export default function Home() {
           </div>
           <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-200">Contato</p>
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold text-white md:text-5xl">
-            Vamos construir uma experiencia web que pareca simples porque foi bem pensada.
+            Vamos construir uma experiência web que pareça simples porque foi bem pensada.
           </h2>
           <div className="mt-8 grid gap-3 text-sm text-slate-300 md:grid-cols-2">
             <ContactLink

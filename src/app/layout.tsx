@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Caua Yves | Desenvolvedor Full Stack",
+  title: "Cauã Yves | Desenvolvedor Full Stack",
   description:
-    "Portfolio de Caua Yves, desenvolvedor full stack especializado em Next.js, React, TypeScript e produtos web escalaveis.",
+    "Portfólio de Cauã Yves, desenvolvedor full stack especializado em Next.js, React, TypeScript e produtos web escaláveis.",
 };
 
 export default function RootLayout({

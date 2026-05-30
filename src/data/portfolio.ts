@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 export const profile = {
-  name: "Caua Yves",
+  name: "Cauã Yves",
   role: "Desenvolvedor Full Stack",
   email: "cauayves5@gmail.com",
   phone: "24 99228-7640",
@@ -18,14 +18,14 @@ export const profile = {
   github: "https://github.com/CauaYves",
   location: "Volta Redonda, RJ",
   headline:
-    "Construo interfaces e plataformas web com foco em produto, escala e entrega em producao.",
+    "Construo interfaces e plataformas web com foco em produto, escala e entrega em produção.",
   summary:
-    "Desenvolvedor Full Stack com 4 anos de experiencia em desenvolvimento web, especializado em Next.js, React, TypeScript e interfaces modernas. Atualmente atuo na MultiClubes como especialista em front-end e participando do ciclo completo de produto: analise, prototipacao, desenvolvimento, deploy e implantacao.",
+    "Desenvolvedor Full Stack com 4 anos de experiência em desenvolvimento web, especializado em Next.js, React, TypeScript e interfaces modernas. Atualmente atuo na MultiClubes como especialista em front-end, participando do ciclo completo de produto: análise, prototipação, desenvolvimento, deploy e implantação.",
 };
 
 export const metrics = [
-  { label: "anos de experiencia", value: "4+" },
-  { label: "clientes atendidos por solucoes", value: "140+" },
+  { label: "anos de experiência", value: "4+" },
+  { label: "clientes atendidos por soluções", value: "140+" },
   { label: "agentes culturais impactados", value: "1.600+" },
   { label: "projetos full stack", value: "30+" },
 ];
@@ -35,28 +35,28 @@ export const projects = [
     name: "WebCheckout",
     type: "Produto para clubes e parques",
     impact:
-      "Checkout mobile para socios realizarem pagamento de consumo e recarga direto pelo celular.",
+      "Checkout mobile para sócios realizarem pagamento de consumo e recarga direto pelo celular.",
     stack: ["Next.js", "React", "TypeScript", "UX"],
   },
   {
-    name: "Portal do Socio",
+    name: "Portal do Sócio",
     type: "Self-service para associados",
     impact:
-      "Portal para pagamento de cobrancas, atualizacao cadastral, inclusao de dependentes, foto e biometria facial.",
+      "Portal para pagamento de cobranças, atualização cadastral, inclusão de dependentes, foto e biometria facial.",
     stack: ["React", "Tailwind", "APIs REST", "Figma"],
   },
   {
     name: "Dashboard Vendas",
     type: "Analytics em tempo real",
     impact:
-      "Visualizacao de vendas, convites, ingressos e mapa de ocupacao com receita detalhada do evento.",
+      "Visualização de vendas, convites, ingressos e mapa de ocupação com receita detalhada do evento.",
     stack: ["Dashboards", "Realtime UI", "TypeScript"],
   },
   {
-    name: "Gestao de Agentes Culturais",
+    name: "Gestão de Agentes Culturais",
     type: "Governo e cultura",
     impact:
-      "Digitalizacao de inscricoes e acompanhamento de projetos culturais, reduzindo envio presencial de documentos.",
+      "Digitalização de inscrições e acompanhamento de projetos culturais, reduzindo o envio presencial de documentos.",
     stack: ["Full Stack", "Azure DevOps", "Render", "PostgreSQL"],
   },
 ];
@@ -67,14 +67,14 @@ export const experience = [
     role: "Desenvolvedor Frontend Pleno",
     period: "Nov 2024 - atual",
     description:
-      "Idealizacao e construcao de projetos front-end para uma das principais empresas brasileiras de tecnologia para parques e clubes, atendendo mais de 140 clientes pelo Brasil.",
+      "Idealização e construção de projetos front-end para uma das principais empresas brasileiras de tecnologia para parques e clubes, atendendo mais de 140 clientes pelo Brasil.",
   },
   {
     company: "Erudir Tech",
-    role: "Desenvolvedor Full Stack Junior",
+    role: "Desenvolvedor Full Stack Júnior",
     period: "Nov 2023 - Nov 2024",
     description:
-      "Desenvolvimento completo de plataforma para gestao de agentes culturais, incluindo arquitetura, integracao, deploy e infraestrutura de entrega continua.",
+      "Desenvolvimento completo de uma plataforma para gestão de agentes culturais, incluindo arquitetura, integração, deploy e infraestrutura de entrega contínua.",
   },
   {
     company: "Driven Education",
@@ -110,10 +110,10 @@ export const skills = [
 
 export const strengths = [
   { icon: Rocket, text: "Do Figma ao deploy, com olhar de produto." },
-  { icon: ShieldCheck, text: "Interfaces confiaveis para fluxos criticos de pagamento e gestao." },
+  { icon: ShieldCheck, text: "Interfaces confiáveis para fluxos críticos de pagamento e gestão." },
   {
     icon: BrainCircuit,
-    text: "Arquitetura limpa, testes e revisao de codigo como parte da entrega.",
+    text: "Arquitetura limpa, testes e revisão de código como parte da entrega.",
   },
-  { icon: Smartphone, text: "Experiencia responsiva pensada para usuarios reais em campo." },
+  { icon: Smartphone, text: "Experiência responsiva pensada para usuários reais em campo." },
 ];
