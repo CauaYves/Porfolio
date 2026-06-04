@@ -208,30 +208,13 @@ export default function Home() {
 
       <section id="contato" className="relative mx-auto max-w-7xl px-5 py-20 md:px-8">
         <div className="reveal glass relative overflow-hidden rounded-lg p-7 md:p-10">
-          <Image
-            src={brand.symbol}
-            alt=""
-            width={220}
-            height={147}
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-8 -right-6 hidden w-48 opacity-20 md:block"
-          />
           <div className="absolute right-8 top-8 hidden w-56 space-y-3 md:block">
             <span className="signal-line block h-px origin-left bg-[#8fa2ff]/70" />
             <span className="signal-line block h-px origin-left bg-[#3d60e0]/70" />
             <span className="signal-line block h-px origin-left bg-[#00229e]/70" />
             <span className="orbit-dot ml-24 block h-3 w-3 rounded-full bg-[#8fa2ff] shadow-[0_0_26px_rgba(61,96,224,0.9)]" />
           </div>
-          <div className="relative flex items-center gap-3">
-            <Image
-              src={brand.logo}
-              alt="Cauã Yves.dev"
-              width={196}
-              height={39}
-              className="h-8 w-auto"
-            />
-            <span className="h-px flex-1 bg-white/10" />
-          </div>
+
           <p className="relative mt-8 font-mono text-xs uppercase tracking-[0.24em] text-[#8fa2ff]">
             Contato
           </p>

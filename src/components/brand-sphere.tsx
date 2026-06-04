@@ -1,24 +1,18 @@
 "use client";
 
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import Image from "next/image";
-import { Suspense, useRef } from "react";
-import {
-  AdditiveBlending,
-  BackSide,
-  DoubleSide,
-  type Group,
-  type Mesh,
-  TextureLoader,
-} from "three";
+import { type RefObject, Suspense, useMemo, useRef } from "react";
+import { AdditiveBlending, BackSide, type Group } from "three";
+import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
 
 function BrandOrb() {
   const groupRef = useRef<Group>(null);
-  const logoRef = useRef<Mesh>(null);
-  const logoTexture = useLoader(TextureLoader, "/public/y.svg");
+  const logoRef = useRef<Group>(null);
+  const elapsedRef = useRef(0);
 
-  useFrame(({ clock }) => {
-    const elapsed = clock.getElapsedTime();
+  useFrame((_, delta) => {
+    elapsedRef.current += delta;
+    const elapsed = elapsedRef.current;
 
     if (groupRef.current) {
       groupRef.current.rotation.y = elapsed * 0.18;
@@ -28,6 +22,7 @@ function BrandOrb() {
     if (logoRef.current) {
       logoRef.current.position.z = Math.sin(elapsed * 1.2) * 0.05;
       logoRef.current.rotation.z = Math.sin(elapsed * 0.65) * 0.035;
+      logoRef.current.rotation.y = Math.sin(elapsed * 0.5) * 0.12;
     }
   });
 
@@ -65,16 +60,50 @@ function BrandOrb() {
         />
       </mesh>
 
-      <mesh ref={logoRef} position={[0, 0, 0.18]}>
-        <planeGeometry args={[2.18, 1.46]} />
-        <meshBasicMaterial
-          map={logoTexture}
-          transparent
-          side={DoubleSide}
-          toneMapped={false}
-          depthWrite={false}
-        />
-      </mesh>
+      <LogoModel logoRef={logoRef} />
+    </group>
+  );
+}
+
+function LogoModel({ logoRef }: { logoRef: RefObject<Group | null> }) {
+  const svg = useLoader(SVGLoader, "/public/y.svg");
+  const logoShapes = useMemo(
+    () => svg.paths.flatMap((path) => SVGLoader.createShapes(path)),
+    [svg],
+  );
+  const extrudeSettings = useMemo(
+    () => ({
+      bevelEnabled: true,
+      bevelSegments: 3,
+      bevelSize: 0.55,
+      bevelThickness: 0.8,
+      curveSegments: 24,
+      depth: 8,
+    }),
+    [],
+  );
+  const scale = 0.026;
+
+  return (
+    <group
+      ref={logoRef}
+      position={[-58.5 * scale, 39 * scale, 0.18]}
+      scale={[scale, -scale, scale]}
+    >
+      {logoShapes.map((shape) => (
+        <mesh key={shape.uuid}>
+          <extrudeGeometry args={[shape, extrudeSettings]} />
+          <meshPhysicalMaterial
+            color="#3d60e0"
+            emissive="#3d60e0"
+            emissiveIntensity={0.34}
+            roughness={0.18}
+            metalness={0.18}
+            clearcoat={0.95}
+            clearcoatRoughness={0.1}
+          />
+        </mesh>
+      ))}
     </group>
   );
 }
@@ -95,14 +124,6 @@ export function BrandSphere() {
           <BrandOrb />
         </Suspense>
       </Canvas>
-      <Image
-        src="/public/y.svg"
-        alt="Símbolo da marca Cauã Yves"
-        width={240}
-        height={160}
-        priority
-        className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[48%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_22px_58px_rgba(143,162,255,0.55)]"
-      />
     </div>
   );
 }
