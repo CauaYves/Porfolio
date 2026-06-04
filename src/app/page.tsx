@@ -1,6 +1,7 @@
 import { ArrowUpRight, AtSign, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import type React from "react";
+import { BrandSphere } from "@/components/brand-sphere";
 import { PortfolioAnimations } from "@/components/portfolio-animations";
 import { experience, metrics, profile, projects, skills, strengths } from "@/data/portfolio";
 
@@ -93,18 +94,9 @@ export default function Home() {
           </dl>
         </div>
 
-        <div className="reveal relative flex aspect-square min-h-[320px] items-center justify-center justify-self-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_center,rgba(61,96,224,0.2),transparent_58%)] shadow-2xl shadow-[#00229e]/30 md:min-h-[430px]">
-          <Image
-            src={brand.symbol}
-            alt="Símbolo da marca Cauã Yves"
-            width={420}
-            height={280}
-            priority
-            sizes="(min-width: 768px) 48vw, 100vw"
-            className="w-[72%] max-w-md drop-shadow-[0_28px_80px_rgba(61,96,224,0.45)]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030613] via-transparent to-transparent" />
-          <div className="absolute bottom-5 left-5 right-5 glass rounded-lg p-4">
+        <div className="reveal relative w-full max-w-[520px] justify-self-center">
+          <BrandSphere />
+          <div className="glass mt-4 rounded-lg p-4 md:absolute md:bottom-5 md:left-5 md:right-5 md:mt-0">
             <p className="text-sm font-medium text-[#dfe6ff]">Atuação atual</p>
             <p className="mt-1 text-sm leading-6 text-slate-300">
               Desenvolvedor Front-end na MultiClubes, entregando produtos usados por clubes e
