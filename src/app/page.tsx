@@ -1,4 +1,13 @@
-import { ArrowUpRight, AtSign, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
+import {
+  ArrowUpRight,
+  AtSign,
+  Download,
+  ExternalLink,
+  FileText,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 import Image from "next/image";
 import type React from "react";
 import { BrandSphere } from "@/components/brand-sphere";
@@ -10,10 +19,13 @@ const brand = {
   symbol: "/public/y.svg",
 };
 
+const resumeUrl = "/Caua_Yves_CV.pdf";
+
 const nav = [
   { href: "#projetos", label: "Projetos" },
   { href: "#experiencia", label: "Experiência" },
   { href: "#stack", label: "Stack" },
+  { href: "#curriculo", label: "Currículo" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -81,6 +93,13 @@ export default function Home() {
             >
               <ExternalLink size={18} />
               LinkedIn
+            </a>
+            <a
+              href="#curriculo"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/15 px-5 font-semibold text-white transition hover:border-white/35 hover:bg-white/8"
+            >
+              <FileText size={18} />
+              Currículo
             </a>
           </div>
 
@@ -203,6 +222,45 @@ export default function Home() {
               </article>
             );
           })}
+        </div>
+      </Section>
+
+      <Section id="curriculo" eyebrow="Currículo" title="Resumo profissional para consulta rápida.">
+        <div className="reveal grid gap-5 lg:grid-cols-[360px_1fr]">
+          <div className="glass rounded-lg p-6">
+            <FileText className="text-[#8fa2ff]" size={26} />
+            <h3 className="mt-5 text-2xl font-semibold text-white">Cauã Yves CV</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              Visualize o currículo diretamente pelo site ou abra o PDF em uma nova aba para
+              compartilhar e imprimir.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-[#3d60e0] px-4 text-sm font-semibold text-white transition hover:bg-[#5d78e8]"
+              >
+                <ExternalLink size={17} />
+                Abrir PDF
+              </a>
+              <a
+                href={resumeUrl}
+                download
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-white/15 px-4 text-sm font-semibold text-white transition hover:border-white/35 hover:bg-white/8"
+              >
+                <Download size={17} />
+                Baixar currículo
+              </a>
+            </div>
+          </div>
+          <div className="glass min-h-[640px] overflow-hidden rounded-lg p-2">
+            <iframe
+              src={`${resumeUrl}#toolbar=1&navpanes=0`}
+              title="Currículo de Cauã Yves"
+              className="h-[640px] w-full rounded-md border-0 bg-white"
+            />
+          </div>
         </div>
       </Section>
 
