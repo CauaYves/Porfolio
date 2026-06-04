@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #05080a;
-  --foreground: #f4fbff;
-  --muted: #8fa3ad;
-  --line: rgba(148, 189, 200, 0.18);
-  --panel: rgba(8, 18, 22, 0.74);
-  --accent: #45d5e8;
-  --accent-2: #f59e5b;
+  --background: #030613;
+  --foreground: #f7f9ff;
+  --muted: #9aa7c7;
+  --line: rgba(93, 120, 224, 0.22);
+  --panel: rgba(7, 13, 36, 0.78);
+  --accent: #3d60e0;
+  --accent-deep: #00229e;
+  --accent-soft: #8fa2ff;
 }
 
 @theme inline {
@@ -28,22 +29,22 @@ html {
 }
 
 ::selection {
-  background: rgba(69, 213, 232, 0.35);
+  background: rgba(61, 96, 224, 0.38);
   color: #ffffff;
 }
 
 .tech-grid {
   background-image:
-    linear-gradient(rgba(69, 213, 232, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(69, 213, 232, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(61, 96, 224, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 96, 224, 0.09) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: linear-gradient(to bottom, black, transparent 78%);
 }
 
 .glass {
-  background: linear-gradient(145deg, rgba(9, 22, 27, 0.84), rgba(5, 10, 13, 0.58));
+  background: linear-gradient(145deg, rgba(8, 15, 42, 0.86), rgba(3, 6, 19, 0.62));
   border: 1px solid var(--line);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+  box-shadow: 0 24px 80px rgba(0, 10, 64, 0.36);
   backdrop-filter: blur(18px);
 }
 

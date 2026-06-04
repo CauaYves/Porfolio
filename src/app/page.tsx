@@ -1,8 +1,13 @@
-import { ArrowUpRight, AtSign, ExternalLink, Mail, MapPin, Phone, Sparkles } from "lucide-react";
+import { ArrowUpRight, AtSign, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import type React from "react";
 import { PortfolioAnimations } from "@/components/portfolio-animations";
 import { experience, metrics, profile, projects, skills, strengths } from "@/data/portfolio";
+
+const brand = {
+  logo: "/public/logo.svg",
+  symbol: "/public/y.svg",
+};
 
 const nav = [
   { href: "#projetos", label: "Projetos" },
@@ -13,15 +18,22 @@ const nav = [
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#05080a] text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[#030613] text-white">
       <PortfolioAnimations />
       <div className="tech-grid pointer-events-none absolute inset-0 opacity-70" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_12%,rgba(69,213,232,0.18),transparent_34%),radial-gradient(circle_at_18%_42%,rgba(245,158,91,0.12),transparent_28%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_12%,rgba(61,96,224,0.25),transparent_34%),radial-gradient(circle_at_18%_42%,rgba(0,34,158,0.18),transparent_30%)]" />
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#05080a]/78 backdrop-blur-xl">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#3d60e0]/20 bg-[#030613]/82 backdrop-blur-xl">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8">
-          <a href="#top" className="font-mono text-sm tracking-[0.24em] text-cyan-100">
-            CAUÃ.YVES
+          <a href="#top" className="flex items-center" aria-label="Cauã Yves - início">
+            <Image
+              src={brand.logo}
+              alt="Cauã Yves.dev"
+              width={180}
+              height={36}
+              priority
+              className="h-8 w-auto"
+            />
           </a>
           <div className="hidden items-center gap-7 text-sm text-slate-300 md:flex">
             {nav.map((item) => (
@@ -32,7 +44,7 @@ export default function Home() {
           </div>
           <a
             href={`mailto:${profile.email}`}
-            className="inline-flex h-10 items-center gap-2 rounded-md border border-cyan-300/30 px-3 text-sm text-cyan-50 transition hover:border-cyan-200 hover:bg-cyan-300/10"
+            className="inline-flex h-10 items-center gap-2 rounded-md border border-[#3d60e0]/45 px-3 text-sm text-[#eef2ff] transition hover:border-[#8fa2ff] hover:bg-[#3d60e0]/15"
           >
             <Mail size={16} />
             <span className="hidden sm:inline">Contato</span>
@@ -45,12 +57,8 @@ export default function Home() {
         className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-5 pb-14 pt-28 md:grid-cols-[1.02fr_0.98fr] md:px-8"
       >
         <div className="relative z-10">
-          <div className="reveal mb-6 inline-flex items-center gap-2 rounded-md border border-cyan-300/25 bg-cyan-300/8 px-3 py-2 text-sm text-cyan-100">
-            <Sparkles size={16} />
-            Full stack com foco em produto, escala e experiência.
-          </div>
           <h1 className="reveal max-w-4xl text-balance text-5xl font-semibold leading-[0.96] tracking-normal text-white sm:text-6xl lg:text-7xl">
-            Sistemas web elegantes para operações que precisam funcionar.
+            Yves, Desenvolvedor FullStack.
           </h1>
           <p className="reveal mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             {profile.summary}
@@ -59,7 +67,7 @@ export default function Home() {
           <div className="reveal mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#projetos"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-cyan-300 px-5 font-semibold text-slate-950 transition hover:bg-cyan-200"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#3d60e0] px-5 font-semibold text-white shadow-[0_18px_50px_rgba(61,96,224,0.35)] transition hover:bg-[#5d78e8]"
             >
               Ver projetos
               <ArrowUpRight size={18} />
@@ -85,18 +93,19 @@ export default function Home() {
           </dl>
         </div>
 
-        <div className="reveal relative min-h-[430px] overflow-hidden rounded-lg border border-white/10 shadow-2xl shadow-cyan-950/30">
+        <div className="reveal relative flex aspect-square min-h-[320px] items-center justify-center justify-self-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_center,rgba(61,96,224,0.2),transparent_58%)] shadow-2xl shadow-[#00229e]/30 md:min-h-[430px]">
           <Image
-            src="/images/hero-system.png"
-            alt="Interface tecnológica abstrata com painéis de dados"
-            fill
+            src={brand.symbol}
+            alt="Símbolo da marca Cauã Yves"
+            width={420}
+            height={280}
             priority
             sizes="(min-width: 768px) 48vw, 100vw"
-            className="object-cover"
+            className="w-[72%] max-w-md drop-shadow-[0_28px_80px_rgba(61,96,224,0.45)]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#05080a] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#030613] via-transparent to-transparent" />
           <div className="absolute bottom-5 left-5 right-5 glass rounded-lg p-4">
-            <p className="text-sm font-medium text-cyan-100">Atuação atual</p>
+            <p className="text-sm font-medium text-[#dfe6ff]">Atuação atual</p>
             <p className="mt-1 text-sm leading-6 text-slate-300">
               Desenvolvedor Front-end na MultiClubes, entregando produtos usados por clubes e
               parques em todo o Brasil.
@@ -111,7 +120,7 @@ export default function Home() {
             const Icon = item.icon;
             return (
               <div key={item.text} className="reveal glass rounded-lg p-5">
-                <Icon className="text-cyan-200" size={22} />
+                <Icon className="text-[#8fa2ff]" size={22} />
                 <p className="mt-4 text-sm leading-6 text-slate-300">{item.text}</p>
               </div>
             );
@@ -128,11 +137,11 @@ export default function Home() {
           {projects.map((project) => (
             <article
               key={project.name}
-              className="reveal glass rounded-lg p-6 transition hover:-translate-y-1 hover:border-cyan-200/45"
+              className="reveal glass rounded-lg p-6 transition hover:-translate-y-1 hover:border-[#8fa2ff]/55"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-sm text-cyan-200">{project.type}</p>
+                  <p className="text-sm text-[#8fa2ff]">{project.type}</p>
                   <h3 className="mt-2 text-2xl font-semibold text-white">{project.name}</h3>
                 </div>
                 <ArrowUpRight className="text-slate-500" />
@@ -165,7 +174,7 @@ export default function Home() {
               className="reveal glass grid gap-4 rounded-lg p-6 md:grid-cols-[220px_1fr]"
             >
               <div>
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-200">
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#8fa2ff]">
                   {item.period}
                 </p>
                 <h3 className="mt-3 text-xl font-semibold text-white">{item.company}</h3>
@@ -189,12 +198,12 @@ export default function Home() {
             const Icon = group.icon;
             return (
               <article key={group.title} className="reveal glass rounded-lg p-6">
-                <Icon className="text-cyan-200" size={24} />
+                <Icon className="text-[#8fa2ff]" size={24} />
                 <h3 className="mt-5 text-xl font-semibold text-white">{group.title}</h3>
                 <ul className="mt-5 space-y-3 text-sm text-slate-300">
                   {group.items.map((item) => (
                     <li key={item} className="flex items-center gap-3">
-                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#3d60e0]" />
                       {item}
                     </li>
                   ))}
@@ -207,13 +216,33 @@ export default function Home() {
 
       <section id="contato" className="relative mx-auto max-w-7xl px-5 py-20 md:px-8">
         <div className="reveal glass relative overflow-hidden rounded-lg p-7 md:p-10">
+          <Image
+            src={brand.symbol}
+            alt=""
+            width={220}
+            height={147}
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-8 -right-6 hidden w-48 opacity-20 md:block"
+          />
           <div className="absolute right-8 top-8 hidden w-56 space-y-3 md:block">
-            <span className="signal-line block h-px origin-left bg-cyan-300/60" />
-            <span className="signal-line block h-px origin-left bg-orange-300/60" />
-            <span className="signal-line block h-px origin-left bg-fuchsia-300/50" />
-            <span className="orbit-dot ml-24 block h-3 w-3 rounded-full bg-cyan-200 shadow-[0_0_26px_rgba(103,232,249,0.9)]" />
+            <span className="signal-line block h-px origin-left bg-[#8fa2ff]/70" />
+            <span className="signal-line block h-px origin-left bg-[#3d60e0]/70" />
+            <span className="signal-line block h-px origin-left bg-[#00229e]/70" />
+            <span className="orbit-dot ml-24 block h-3 w-3 rounded-full bg-[#8fa2ff] shadow-[0_0_26px_rgba(61,96,224,0.9)]" />
           </div>
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-200">Contato</p>
+          <div className="relative flex items-center gap-3">
+            <Image
+              src={brand.logo}
+              alt="Cauã Yves.dev"
+              width={196}
+              height={39}
+              className="h-8 w-auto"
+            />
+            <span className="h-px flex-1 bg-white/10" />
+          </div>
+          <p className="relative mt-8 font-mono text-xs uppercase tracking-[0.24em] text-[#8fa2ff]">
+            Contato
+          </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold text-white md:text-5xl">
             Vamos construir uma experiência web que pareça simples porque foi bem pensada.
           </h2>
@@ -235,7 +264,7 @@ export default function Home() {
             />
             <ContactLink href={profile.github} icon={<AtSign size={18} />} label="@CauaYves" />
             <div className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-3">
-              <MapPin size={18} className="text-cyan-200" />
+              <MapPin size={18} className="text-[#8fa2ff]" />
               {profile.location}
             </div>
           </div>
@@ -259,7 +288,7 @@ function Section({
   return (
     <section id={id} className="relative mx-auto max-w-7xl px-5 py-16 md:px-8">
       <div className="reveal mb-8 max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-[0.24em] text-cyan-200">{eyebrow}</p>
+        <p className="font-mono text-xs uppercase tracking-[0.24em] text-[#8fa2ff]">{eyebrow}</p>
         <h2 className="mt-4 text-3xl font-semibold text-white md:text-5xl">{title}</h2>
       </div>
       {children}
@@ -281,9 +310,9 @@ function ContactLink({
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
-      className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-3 transition hover:border-cyan-200/40 hover:bg-cyan-300/10"
+      className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-3 transition hover:border-[#8fa2ff]/55 hover:bg-[#3d60e0]/15"
     >
-      <span className="text-cyan-200">{icon}</span>
+      <span className="text-[#8fa2ff]">{icon}</span>
       {label}
     </a>
   );

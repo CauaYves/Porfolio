@@ -20,7 +20,7 @@ export const profile = {
   headline:
     "Construo interfaces e plataformas web com foco em produto, escala e entrega em produção.",
   summary:
-    "Desenvolvedor Full Stack com 4 anos de experiência em desenvolvimento web, especializado em Next.js, React, TypeScript e interfaces modernas. Atualmente atuo na MultiClubes como especialista em front-end, participando do ciclo completo de produto: análise, prototipação, desenvolvimento, deploy e implantação.",
+    "4 anos de experiência em desenvolvimento web, especializado em Next.js, React, TypeScript e interfaces modernas. Atualmente atuo na MultiClubes como especialista em front-end, participando do ciclo completo de produto: análise, prototipação, desenvolvimento, deploy e implantação.",
 };
 
 export const metrics = [
